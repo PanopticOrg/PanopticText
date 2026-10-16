@@ -1,20 +1,4 @@
-import json
-import os
-
-from panoptic.utils import get_datadir
-
-def after_install():
-    """
-    Adds plugin to the list of registered panoptic plugins
-    """
-    project_path = get_datadir() / 'panoptic' / 'projects.json'
-    with open(project_path, 'r') as f:
-        projects = json.load(f)
-        projects['plugins'].append(os.path.dirname(os.path.abspath(__file__)))
-    with open(project_path, 'w') as f:
-        json.dump(projects, f)
-
-raw_stopword_list = ["Ap.", "Apr.", "GHz", "MHz", "USD", "a", "afin", "ah", "ai", "aie", "aient", "aies", "ait",
+FRENCH_STOP_WORDS = ["Ap.", "Apr.", "GHz", "MHz", "USD", "a", "afin", "ah", "ai", "aie", "aient", "aies", "ait",
                      "alors", "après", "as", "attendu", "au", "au-delà", "au-devant", "aucun", "aucune", "audit",
                      "auprès", "auquel", "aura", "aurai", "auraient", "aurais", "aurait", "auras", "aurez", "auriez",
                      "aurions", "aurons", "auront", "aussi", "autour", "autre", "autres", "autrui", "aux", "auxdites",

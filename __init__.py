@@ -1,2 +1,3 @@
-from .main import PluginExample
-plugin_class = PluginExample
+from .main import PanopticText
+
+plugin_class = PanopticText
